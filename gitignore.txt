@@ -1,0 +1,26 @@
+# Selenium / WebDriver
+*.log
+geckodriver.log
+chromedriver*
+
+# Arquivos JSON intermediários da coleta (não versionar)
+dados/loteca_*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
