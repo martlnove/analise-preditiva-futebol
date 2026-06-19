@@ -1,6 +1,6 @@
 # Análise Preditiva de Futebol — Pipeline de Dados Esportivos
 
-Pipeline completo de dados, da coleta automatizada à predição, aplicado aos resultados da Loteca (Caixa Econômica Federal). O projeto percorre todas as etapas de um fluxo de dados real: **coleta via web scraping → processamento estatístico → análise de confrontos → modelo preditivo**.
+Pipeline completo de dados, da coleta automatizada à predição, aplicado aos resultados da Loteca (Caixa Econômica Federal). O projeto percorre todas as etapas de um fluxo de dados real: **coleta via web scraping → processamento estatístico → análise de confrontos → modelo preditivo**, e consolida os principais resultados em um **dashboard interativo no Power BI**.
 
 > Projeto acadêmico desenvolvido no Bacharelado em Sistemas de Informação — Faculdade Dom Bosco de Porto Alegre.
 
@@ -45,6 +45,24 @@ Modelo de Machine Learning (**Random Forest**) treinado sobre o histórico para 
 
 ---
 
+## Dashboard (Power BI)
+
+Os resultados do histórico de **17 mil jogos (2002–2025)** foram consolidados em um dashboard interativo no Power BI, com indicadores-chave e visualizações que exploram os padrões da Loteca.
+
+![Dashboard da Loteca](dashboard/dashboard_futebol.png)
+
+O dashboard destaca:
+- **Cartões de KPI:** total de jogos, média de gols por jogo, % de vitória do mandante, % de empates e total de times
+- **Distribuição de resultados** (vitória mandante, empate, vitória visitante)
+- **Distribuição de gols por jogo**
+- **Ranking dos times** com mais vitórias no período
+
+**Principais insights:** a vantagem do mandante é evidente — vence **47%** dos jogos, quase o dobro do visitante (26,5%); a média é de **2,6 gols por jogo**; e, entre os grandes clubes, o Palmeiras apresenta o melhor aproveitamento histórico.
+
+> O arquivo `.pbix` e os dados agregados que alimentam o dashboard estão na pasta [`dashboard/`](dashboard/).
+
+---
+
 ## Stack
 
 | Etapa | Tecnologias |
@@ -53,6 +71,7 @@ Modelo de Machine Learning (**Random Forest**) treinado sobre o histórico para 
 | Processamento | Python, pandas, numpy |
 | Análise | Python, pandas, numpy |
 | Predição | Python, scikit-learn (Random Forest) |
+| Visualização | Power BI |
 
 ---
 
@@ -85,6 +104,9 @@ python 3_analise/analise_decisoes.py
 python 4_predicao/modelo_preditivo.py
 ```
 
+### 5. Dashboard
+Abra `dashboard/dashboard_futebol.pbix` no Power BI Desktop.
+
 ---
 
 ## Estrutura do projeto
@@ -101,6 +123,10 @@ analise-preditiva-futebol/
 │   └── analise_decisoes.py
 ├── 4_predicao/
 │   └── modelo_preditivo.py
+├── dashboard/
+│   ├── dashboard_futebol.pbix    # dashboard Power BI
+│   ├── dashboard_futebol.png     # print do dashboard
+│   └── dados_powerbi/            # CSVs agregados que alimentam o dashboard
 ├── dados/
 │   └── README.md
 ├── requirements.txt
